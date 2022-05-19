@@ -453,6 +453,42 @@ address {
   color: var(--accent-color);
 }
 
+/* Делаем полосу под "Студия" при ховере */
+
+.item-strip {
+  position: relative;
+}
+
+.nav-link.current::after {
+  position: absolute;
+  content: '';
+  width: 48px;
+  height: 4px;
+  bottom: 0px;
+  right: 0px;
+  background-color: #2196F3;
+  border-radius: 2px;
+  /* display: none; */
+}
+
+/* .nav-link.current:hover::after,
+.nav-link.current:focus::after {
+  display: inline-flex;
+} */
+
+/* Делаем полосу под "Портфолио" при ховере */
+
+.site-nav .current-portfolio::after {
+  position: absolute;
+  content: '';
+  width: 78px;
+  height: 4px;
+  bottom: 0px;
+  right: 0px;
+  background-color: #2196F3;
+  border-radius: 2px;
+}
+
 .button {
   display: inline-block;
   border-radius: 4px;
@@ -472,6 +508,10 @@ address {
 
   cursor: pointer;
   border: none;
+}
+
+.button:hover {
+  background-color: #188CE8;
 }
 
 .secondary-button {
@@ -556,8 +596,41 @@ address {
   cursor: pointer;
 }
 
-.wrap-element .footer-img {
+.wrap-element .wrap-img {
   display: block;
+}
+
+/* Делаем overlay для наших проектов */
+
+.wrap-element {
+  position: relative;
+}
+
+.overlay-text {
+  position: absolute;
+  width: 370px;
+  height: 294px;
+  top: 0px;
+  background-color: rgba(33, 150, 243, 0.9);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #FFFFFF;
+  line-height: 1.55;
+  padding: 63px 24px;
+  font-size: 18px;
+}
+
+
+.is-hidden {
+  opacity: 0;
+}
+
+.link-wrap-element:hover .overlay-text,
+.link-wrap-element:focus .overlay-text {
+  opacity: 1;
 }
 
 .link-wrap-element:hover,
@@ -611,7 +684,29 @@ h1 {
 }
 
 .feature-list-item {
+  position: relative;
+
   width: calc((100% - 60px) / 3);
+}
+
+/* Добавляет подпись под нашими услугами */
+
+.label  {
+  position: absolute;
+  width: 370px;
+  height: 70px;
+  right: 0px;
+  bottom: 0px;
+  background-color: rgba(48, 48, 58, 0.8);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.14;
+  text-transform: uppercase;
 }
 
 .services-img {
