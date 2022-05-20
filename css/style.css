@@ -6,6 +6,8 @@
   --primary-letter-spacing: 0.03em;
   --secondary-letter-spacing: 0.02em;
   --hero-letter-spacing: 0.06em;
+  --transition-duration: 250ms;
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -123,6 +125,10 @@ ul {
   width: 44px;
   height: 44px;
   border-radius: 50%;
+
+  transition-property: background-color;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--timing-function);
 }
 
 .link-instagram:hover,
@@ -171,6 +177,10 @@ ul {
   height: 92px;
   border: 1px solid #afb1b8;
   border-radius: 4px;
+
+  transition-property: border;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--timing-function);
 }
 
 .feature-list-clients:hover .link-clients {
@@ -184,6 +194,10 @@ ul {
 .svg-client5,
 .svg-client6 {
   fill: #afb1b8;
+
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link-clients:hover .svg-client1,
@@ -383,6 +397,14 @@ address {
   padding-right: 5px;
 }
 
+.site-nav .nav-link,
+.contact-nav .contact-link,
+.footer-contact .contact-link {
+  transition-property: color;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--timing-function);
+}
+
 .site-nav .nav-link:hover,
 .contact-nav .contact-link:hover,
 .footer-contact .contact-link:hover,
@@ -508,6 +530,10 @@ address {
 
   cursor: pointer;
   border: none;
+
+  transition-property: background-color;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--timing-function);
 }
 
 .button:hover {
@@ -531,6 +557,10 @@ address {
 
   cursor: pointer;
   border: none;
+
+  transition-property: background-color, box-shadow;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--timing-function);
 }
 
 .currently-active {
@@ -608,21 +638,23 @@ address {
 
 .overlay-text {
   position: absolute;
-  width: 370px;
-  height: 294px;
-  top: 0px;
-  background-color: rgba(33, 150, 243, 0.9);
+  top: 0;
+  /* width: 100%; */
+  transform: translateY(100%);
 
-  display: flex;
+  /* display: inline-block;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 
   color: #FFFFFF;
   line-height: 1.55;
   padding: 63px 24px;
   font-size: 18px;
-}
 
+  transition-property: background-color, transform;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--timing-function);
+}
 
 .is-hidden {
   opacity: 0;
@@ -631,12 +663,8 @@ address {
 .link-wrap-element:hover .overlay-text,
 .link-wrap-element:focus .overlay-text {
   opacity: 1;
-}
-
-.link-wrap-element:hover,
-.link-wrap-element:focus {
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
+  background-color: rgba(33, 150, 243, 0.9);
+  transform: translateY(0%);
 }
 
 .link-wrap-element {
@@ -644,8 +672,14 @@ address {
   color: var(--primary-text-color);
 }
 
-.link-wrap-element:hover .projects-description,
-.link-wrap-element:focus .projects-description {
+.wrap-element {
+  transition-property: box-shadow;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--timing-function);
+}
+
+.wrap-element:hover,
+.wrap-element:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
