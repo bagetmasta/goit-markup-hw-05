@@ -46,7 +46,7 @@ ul {
   text-align: center;
 
   background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
-    url('../images/bcg-img.jpg');
+    url('../images/jpg/bcg-img.jpg');
 
   background-repeat: no-repeat;
   background-position: 50% 50%;
@@ -628,48 +628,45 @@ address {
 
 .wrap-element .wrap-img {
   display: block;
+  position: relative;
 }
 
 /* Делаем overlay для наших проектов */
 
 .wrap-element {
   position: relative;
+  overflow: hidden;
 }
 
 .overlay-text {
   position: absolute;
   top: 0;
-  /* width: 100%; */
+  height: 294px;
   transform: translateY(100%);
+  opacity: 0;
 
-  /* display: inline-block;
-  justify-content: center;
-  align-items: center; */
-
-  color: #FFFFFF;
+  background-color: #2196f3;
+  color: #ffffff;
   line-height: 1.55;
   padding: 63px 24px;
   font-size: 18px;
 
-  transition-property: background-color, transform;
+  transition-property: background-color, transform, opacity;
   transition-duration: var(--transition-duration);
   transition-timing-function: var(--timing-function);
-}
-
-.is-hidden {
-  opacity: 0;
-}
-
-.link-wrap-element:hover .overlay-text,
-.link-wrap-element:focus .overlay-text {
-  opacity: 1;
-  background-color: rgba(33, 150, 243, 0.9);
-  transform: translateY(0%);
 }
 
 .link-wrap-element {
   text-decoration: none;
   color: var(--primary-text-color);
+}
+
+
+.link-wrap-element:hover .overlay-text,
+.link-wrap-element:focus .overlay-text {
+  background-color: rgba(33, 150, 243, 0.9);
+  transform: translateY(0);
+  opacity: 1;
 }
 
 .wrap-element {
@@ -800,3 +797,45 @@ h1 {
   display: flex;
   align-items: baseline;
 }
+
+/* Делаем бекдроп */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+
+.backdrop.is-hidden {
+  opacity: 1;
+  pointer-events: none;
+}
+
+.modal {
+  position: absolute;
+  width: 528px;
+  height: 581px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: #FFFFFF;
+}
+
+.backdrop-button {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  top: 0%;
+  left: 47%;
+
+  fill: #000000;
+  background-color: red;
+}
+
