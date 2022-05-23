@@ -149,7 +149,7 @@ ul {
 .svg-linkedin {
   fill: #afb1b8;
 
-  transition: fill 250ms var(--timing-function);
+  transition: fill var(--transition-duration) var(--timing-function);
 }
 
 .link-instagram:hover .svg-instagram,
@@ -640,7 +640,7 @@ address {
 
 /* Делаем overlay для наших проектов */
 
-.wrap-element {
+.hidden-overlow {
   position: relative;
   overflow: hidden;
 }
