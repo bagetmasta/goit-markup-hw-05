@@ -648,7 +648,6 @@ address {
 .overlay-text {
   position: absolute;
   top: 0;
-  height: 294px;
   transform: translateY(100%);
   opacity: 0;
 
