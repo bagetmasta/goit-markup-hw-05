@@ -65,8 +65,13 @@ ul {
   fill: #2196f3;
 }
 
-.svg-envelope {
+.svg-envelope,
+.svg-smartphone {
   margin-right: 10px;
+
+  transition-property: fill;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--timing-function);
 }
 
 .contact-nav .contact-link {
@@ -82,10 +87,6 @@ ul {
 
 .icon-smartphone:hover {
   fill: #2196f3;
-}
-
-.svg-smartphone {
-  margin-right: 10px;
 }
 
 /* Добавляем иконки в feature-list и стилизируем их */
@@ -147,6 +148,8 @@ ul {
 .svg-facebook,
 .svg-linkedin {
   fill: #afb1b8;
+
+  transition: fill 250ms var(--timing-function);
 }
 
 .link-instagram:hover .svg-instagram,
@@ -196,7 +199,7 @@ ul {
   fill: #afb1b8;
 
   transition-property: fill;
-  transition-duration: 250ms;
+  transition-duration: var(--transition-duration);
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -213,6 +216,10 @@ ul {
 .link-clients:focus .svg-client5,
 .link-clients:focus .svg-client6 {
   fill: #2196f3;
+
+  transition-property: fill;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .both-of-sections,
@@ -484,9 +491,9 @@ address {
 .nav-link.current::after {
   position: absolute;
   content: '';
-  width: 48px;
+  width: 100%;
   height: 4px;
-  bottom: 0px;
+  bottom: -1px;
   right: 0px;
   background-color: #2196F3;
   border-radius: 2px;
@@ -503,9 +510,9 @@ address {
 .site-nav .current-portfolio::after {
   position: absolute;
   content: '';
-  width: 78px;
+  width: 100%;
   height: 4px;
-  bottom: 0px;
+  bottom: -1px;
   right: 0px;
   background-color: #2196F3;
   border-radius: 2px;
@@ -558,7 +565,7 @@ address {
   cursor: pointer;
   border: none;
 
-  transition-property: background-color, box-shadow;
+  transition-property: background-color, box-shadow, color;
   transition-duration: var(--transition-duration);
   transition-timing-function: var(--timing-function);
 }
@@ -654,11 +661,17 @@ address {
   transition-property: background-color, transform, opacity;
   transition-duration: var(--transition-duration);
   transition-timing-function: var(--timing-function);
+
+  overflow: hidden;
 }
 
 .link-wrap-element {
   text-decoration: none;
   color: var(--primary-text-color);
+
+  transition-property: box-shadow;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--timing-function);
 }
 
 
@@ -667,12 +680,6 @@ address {
   background-color: rgba(33, 150, 243, 0.9);
   transform: translateY(0);
   opacity: 1;
-}
-
-.wrap-element {
-  transition-property: box-shadow;
-  transition-duration: var(--transition-duration);
-  transition-timing-function: var(--timing-function);
 }
 
 .wrap-element:hover,
@@ -808,9 +815,10 @@ h1 {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
 
-
   opacity: 1;
   transition: opacity var(--timing-function) var(--transition-duration), visibility var(--timing-function) var(--transition-duration);
+
+  z-index: 1;
 }
 
 .backdrop.is-hidden {
