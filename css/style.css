@@ -640,7 +640,7 @@ address {
 
 /* Делаем overlay для наших проектов */
 
-.hidden-overlow {
+.hidden-box {
   position: relative;
   overflow: hidden;
 }
